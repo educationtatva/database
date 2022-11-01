@@ -1,0 +1,7 @@
+select * from scott.emp;
+
+select job, count(*) from scott.emp group by job;
+
+select deptno, count(*) from scott.emp group by deptno;
+
+select deptno, count(*) from scott.emp group by deptno having deptno > 10;
