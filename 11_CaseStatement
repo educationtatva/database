@@ -1,0 +1,6 @@
+select empno, ename, sal,
+case
+    when sal> 2400 then 'Salary is higher'
+    when sal< 2400 then 'Salary is lower'
+end as aboutSalary
+from scott.emp;
