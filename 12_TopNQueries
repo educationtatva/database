@@ -1,0 +1,22 @@
+select * from scott.emp order by sal desc
+Fetch  first 5 rows only;
+
+SELECT sal
+FROM   (SELECT sal
+        FROM   scott.emp
+        ORDER BY sal DESC)
+WHERE ROWNUM <= 5;
+
+WITH ordered_query AS
+  (SELECT sal
+   FROM   scott.emp
+   ORDER BY sal DESC)
+SELECT sal
+FROM   ordered_query
+WHERE  rownum <= 5;
+
+SELECT sal, sal_rank
+FROM   (SELECT sal,
+               DENSE_RANK() OVER (ORDER BY sal DESC) AS sal_rank 
+        FROM   scott.emp)
+WHERE  sal_rank <= 5;
