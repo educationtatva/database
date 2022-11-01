@@ -1,0 +1,7 @@
+select empno,ename,comm,nvl(comm,90*10) as test1 from scott.emp;
+ 
+  select empno,ename,comm,nvl2(comm,MGR,900) as test1 from scott.emp;
+  
+  select empno, ename, comm,mgr, decode(comm, null, MGR, 900) from scott.emp;
+  
+    select empno, ename, comm,mgr, coalesce(comm, MGR, 900) from scott.emp;
