@@ -1,0 +1,7 @@
+select * from scott.emp;
+
+select * from scott.emp where empno between 7700 and 7900;
+
+select * from scott.emp where hiredate between '01-Jun-80' and '01-Jun-81';
+
+select * from scott.emp where job between 'CLERK' and 'MANAGER';
