@@ -1,0 +1,8 @@
+select * from scott.emp where empno in 
+(select empno from scott.emp where deptno =10);
+
+select * from scott.emp a where exists 
+(select b.empno from scott.emp b  where a.deptno = b.deptno and b.deptno =10);
+
+select a.*, (select b.dname from scott.dept b where b.deptno = a.deptno) as dname from scott.emp a;
+
