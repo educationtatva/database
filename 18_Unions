@@ -1,0 +1,5 @@
+select empno from scott.emp
+union
+select 7369 from dual
+union
+select 9999 from dual;
