@@ -1,0 +1,22 @@
+select * from scott.emp a;
+
+select * from scott.dept b;
+
+
+===========Inner Join==============
+select a.empno,a.ename, b.deptno, b.dname from scott.emp a, scott.dept b where a.deptno = b.deptno;
+
+select a.empno,a.ename, b.deptno, b.dname from scott.emp a left join scott.dept b on a.deptno = b.deptno;
+
+
+===========Outer Join==============
+select a.empno,a.ename, b.deptno, b.dname from scott.emp a full outer join scott.dept b on a.deptno = b.deptno;
+
+select a.empno,a.ename, b.deptno, b.dname from scott.dept b full outer join scott.emp a on b.deptno = a.deptno where a.deptno is null or b.deptno is null;
+
+===========Left Join==============
+select a.empno,a.ename, b.deptno, b.dname from scott.emp a left  join scott.dept b on a.deptno = b.deptno;
+
+
+===========Outer Join==============
+select a.empno,a.ename, b.deptno, b.dname from scott.emp a right  join scott.dept b on a.deptno = b.deptno;
